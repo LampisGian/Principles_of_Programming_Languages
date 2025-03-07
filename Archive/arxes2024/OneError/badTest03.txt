@@ -1,0 +1,46 @@
+
+public class Bad_Test02_A {
+	int foo = 10;
+	
+	public char getLine() { return '\n'; }
+	
+	private String getFamousString(int value) {
+		String info = "Zero";
+		switch(value) {
+			case 1: info = "One";
+			case 2: info = "Hundred";
+			case 3: info = "Million";
+		}
+	return info;
+	}
+}
+
+public class Bad_Test02_B {
+	int sum = 0;
+	private double avg = 0.0d; private String info = "You can do it";
+
+	public int method1(char letter) {
+		double sum = 1.0d;
+		
+		Bad_Test02_A obj1 = new Bad_Test02_A();
+
+		sum = sum * obj1.xox();  // Method "xox()" not declared, does not exist.
+		sum = sum + obj1.foo;
+
+		letter = getLine();  // Method "getLine" is declared in another class.
+	
+		sum = (sum + avg) * 20;
+		avg = -28.575d;
+		
+		return (otherMethod(15));  // Method "otherMethod" is not defined yet.
+	}
+	
+	private int otherMethod(int num)
+	{
+		String otherStr = "Thank You";
+		
+		Bad_Test02_A obj2 = new Bad_Test02_A();
+		
+		otherStr = obj2.getFamousString(2); // Method "getFamousString" is Private of another class.
+	}
+}

@@ -1,0 +1,14 @@
+
+
+/* 
+	This is 
+	a multiple comment
+*/
+
+public class A {
+	int var1; private double var2;	// This is a single comment
+
+	public void method1() {
+		out.println("Hello World!");
+	}
+}

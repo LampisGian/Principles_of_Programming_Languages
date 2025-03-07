@@ -1,0 +1,155 @@
+
+public class ServeClass1 {
+	int foo = 0;
+
+	/*public void initialize() {
+		foo = 0;
+	}*/
+
+	public void counter(int numMax) {
+		int count;
+		
+		if (numMax < 0)
+		{
+			return ;
+		}
+
+		count = 1;
+		do {
+			out.println("Value: ", count);
+			count = count + 1;
+		} while (count < numMax);
+	}
+
+	public int comparator(int num1, int num2) {
+		int valRet;
+		
+		valRet = 1;
+		out.println("Result: ");
+	
+		if (num1 == num2) {  // Show num1 == num2
+			out.print("\t", num1);
+			out.print("==");
+			out.println("", num2);
+			valRet = valRet + 1;
+			foo = foo + (num1 + num2);
+		} else if (num1 != num2) {  // Show num1 != num2
+			out.print("\t", num1);
+			out.print("!=");
+			out.println("", num2);
+			foo = foo + (num1 * num2);
+			valRet = valRet * -4;
+		} else if (num1 < num2) {  // Show num1 < num2
+			out.print("\t", num1);
+			out.print("<");
+			out.println("", num2);
+			foo = foo + (num2 - num1);
+			valRet = valRet + 100 / - (4 * 2);
+		} else if (num1 > num2) {  // Show num1 > num2
+			out.print("\t", num1);
+			out.print(">");
+			out.println("", num2);
+			foo = foo + (num1 - num2);
+			valRet = valRet / 100 * 2;
+		}
+		
+		return valRet;
+	}
+}
+
+public class ServeClass2 {
+	private String name;
+	private double points;
+	private int level;
+	
+	public void clear() {
+		name = "";
+		points = 0.0d;
+		level = 0;
+	}
+
+	public void fill(String n, double p, int l) {
+		name = n;
+		points = p;
+		level = l;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public double getPoints() {
+		return points;
+	}
+	
+	public int getLevel() {
+		return level;
+	}
+	
+	public String getStr() {
+		String info;
+		
+		switch(level) {
+			case 1:
+				info = "Basic";
+			case 2:
+				info = "Middle";
+			case 3:
+				info = "Advanced";
+			default:
+				info = "Unknown";
+		}
+		
+		return info;
+	}
+}
+
+public class ClientClass {
+
+	public void main() {
+		String otherStr1 = "1", otherStr2 = "2";
+		double other_points;
+		int other2level;
+		
+		ServeClass1 bar = new ServeClass1();
+		ServeClass2 baz1 = new ServeClass2();
+		ServeClass2 baz2 = new ServeClass2();
+		
+		//bar.initialize();
+		out.println("FOO: ", bar.foo);
+		
+		bar.counter(-6);
+		bar.counter(6);
+		bar.comparator(8, 9);
+		out.println("FOO: ", bar.foo);
+		bar.comparator(20, 11);
+		out.println("FOO: ", bar.foo);
+
+		baz1.clear();
+		baz1.fill("John", 67.658d, 2);
+		otherStr1 = baz1.getName();
+		other_points = baz1.getPoints();
+		other2level = baz1.getLevel();
+		
+		out.println("ServeClass2: ");
+		out.println("\t", otherStr1);
+		out.println("\t", other_points);
+		out.println("\t", other2level);
+		otherStr1 = baz1.getStr();
+		out.println("\t", otherStr1);
+
+		baz2.clear();
+		baz2.fill("Anna", 93.967d, 3);
+		otherStr2 = baz2.getName();
+		other_points = baz2.getPoints();
+		other2level = baz2.getLevel();
+		
+		out.println("ServeClass2: ");
+		out.println("\t", otherStr2);
+		out.println("\t", other_points);
+		out.println("\t", other2level);
+		otherStr2 = baz1.getStr();
+		out.println("\t", otherStr2);
+	}
+}
+

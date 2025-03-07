@@ -1,0 +1,48 @@
+
+public class Bad_Test02_A {
+	int foo = 10; public int bar = 100;
+	private int baz = 250;
+	
+	public String getMysteriousString(int value) {
+		String info = "Zero";
+		switch(value) {
+			case 1: info = "One";
+			case 2: info = "Two";
+			case 3: info = "Three";
+		}
+		return info;
+	}
+}
+
+public class Bad_Test02_B {
+	int sum = 0; private double avg = 0.0d;
+	boolean isOk = true; private String info = "You can do it";
+
+	public int method1(char isOk) {
+		double sum = 1.0d; int count = 100;
+		
+		Bad_Test02_A obj1 = new Bad_Test02_A();
+
+		sum = sum * obj1.foo;
+		sum = sum + obj1.bar;
+		sum = sum + obj1.baz;  
+
+		info = obj1.getMysteriousString(2);
+		isBad = true; 
+	
+		sum = (sum + avg) * 2;
+		avg = -1.55d;
+		
+		return (15);
+	}
+	
+	private int otherMethod(int num)
+	{
+		if ((num == 0) || (num == 1)) {
+			return 1 * count; // Variable "count" is declared in another method.
+			return 1;
+		} else {
+			return num * otherMethod(num - 1);
+		}
+	}
+}

@@ -1,0 +1,41 @@
+
+public class A_a2 {
+	int var1; private double var2;
+	boolean var3; private String var4;
+	public char var5;
+
+	public int method1() {
+		var1 = 1;
+		var2 = 5.9d;
+		var3 = true;
+		var4  "Hello World"; // Missing symbol '=' in variable assignment
+		var5 = 'k';
+
+		out.println("Vars: ", var1, var2, var3, var4, var5);
+		
+		return (var1 * 23);
+	}
+
+	public boolean method2() {
+		double varM2; int index;
+		int indexD; boolean valRet;
+
+		varM2 = var2  method1(); // Missing arithmetic operator in variable assignment
+		
+		
+		for (index = 1; index < 11; index = index + 3) {
+			out.print("Index: ", index);
+			indexD = index * 4;
+			out.print("X2: ", indexD);
+		}
+		
+		if (4 + 6 < varM2) {
+			valRet = true	// Missing symbol ';' in variable assignment
+			valRet = true;
+		} else {
+			valRet = false;
+		}
+		
+		return (valRet);
+	}
+}
